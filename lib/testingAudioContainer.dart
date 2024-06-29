@@ -24,16 +24,8 @@ final double Width = MediaQuery.of(context).size.width;
         color: Colors.purple,
         child: TextButton(
           onPressed: () async{
-            await audioPlayer.play(AssetSource("audios/demo.mp3"));
+            await audioPlayer.play(AssetSource("audios/demo2.mp3"));
 
-
-            // if(isPlaying){
-
-            // }else{
-
-            // }
-
-            
           }, child: Text("."),
         ),
       )
