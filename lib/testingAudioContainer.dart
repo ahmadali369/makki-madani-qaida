@@ -2,7 +2,13 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class AutdioButtonWidget extends StatefulWidget {
-  const AutdioButtonWidget({Key? key}) : super(key: key);
+  AutdioButtonWidget({Key? key, required this.Width, required this.Height, required this.left,  required this.top}) : super(key: key);
+
+  double Width;
+  double Height;
+  double top;
+  double left;
+
 
   @override
   State<AutdioButtonWidget> createState() => _AutdioButtonWidgetState();
@@ -14,18 +20,17 @@ class _AutdioButtonWidgetState extends State<AutdioButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final double Height = MediaQuery.of(context).size.height;
-final double Width = MediaQuery.of(context).size.width;
+
 
     return  Scaffold(
-      body: Center(child: Container(
-        width: Width * .2,
-        height: Height * .1,
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width * .172,
+          height: MediaQuery.of(context).size.height * .075,
         color: Colors.purple,
         child: TextButton(
           onPressed: () async{
             await audioPlayer.play(AssetSource("audios/demo2.mp3"));
-
           }, child: Text("."),
         ),
       )
