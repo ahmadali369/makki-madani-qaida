@@ -32,10 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
-  void _triggerButtonManullay(int index) async{
-
-
+  void _triggerButtonManullay(int index) async {
     _triggerButton(index);
     await audioPlayer.play(AssetSource(_audios[index]));
 
@@ -48,11 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     await Future.delayed(nullableDuration);
 
     _triggerButton(index);
-
-
   }
-
-
 
   Future<void> _triggerButtonsSequentially() async {
     for (int i = 0; i < _buttonStates.length; i++) {
@@ -70,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
         throw Exception('Nullable duration is null');
       }
       await Future.delayed(nullableDuration);
+
       ///
     }
     // Reset the last button after the loop ends
@@ -105,23 +99,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 0.427, // Adjust the top position as needed.
 
             child: Container(
+
               decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
+                  color: Colors.transparent, borderRadius: BorderRadius.circular(5),
+
+              ),
 
               width: MediaQuery.of(context).size.width * .172,
               height: MediaQuery.of(context).size.height * .075,
+              clipBehavior: Clip.antiAlias,
+
+
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: _buttonStates[0] ? Colors.green : Colors.blue,
+                  shadowColor: Colors.transparent,
+                  primary: _buttonStates[0] ? Color(0xbbB3E6E1) : Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0.0), // Optional: Set border radius
+                    // Optional: You can also set other properties like border color, etc.
+                  ),
                 ),
+
                 onPressed: () async {
-                  // _triggerButton(0);
+
                   _triggerButtonManullay(0);
 
                   // await audioPlayer.play(AssetSource("audios/demo2.mp3"));
                   print("button 1");
                 },
-                child: FlutterLogo(),
+                child: SizedBox(),
               ),
               // Change the color as needed.
             ),
@@ -255,3 +261,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+
