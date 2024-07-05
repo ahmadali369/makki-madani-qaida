@@ -10,6 +10,36 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  late List<bool> _buttonStates;
+
+  @override
+  void initState() {
+    super.initState();
+    _buttonStates = List<bool>.filled(3, false);
+  }
+
+  void _triggerButton(int index) {
+    setState(() {
+      _buttonStates[index] = !_buttonStates[index];
+    });
+  }
+
+  Future<void> _triggerButtonsSequentially() async {
+    for (int i = 0; i < _buttonStates.length; i++) {
+      _triggerButton(i);
+      if (i > 0) {
+        _triggerButton(i - 1); // Reset the previous button
+      }
+      await Future.delayed(Duration(seconds: 1));
+
+    }
+    // Reset the last button after the loop ends
+    _triggerButton(_buttonStates.length - 1);
+  }
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     final double Height = MediaQuery.of(context).size.height;
@@ -44,6 +74,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
             width: MediaQuery.of(context).size.width * .172,
             height: MediaQuery.of(context).size.height * .075,
+            child: ElevatedButton(
+
+              style: ElevatedButton.styleFrom(
+                primary: _buttonStates[0] ? Colors.green : Colors.blue,
+              ),
+
+              onPressed: (){
+                _triggerButton(0);
+                print("button 1");
+              },
+              child: FlutterLogo(),
+            ),
             // Change the color as needed.
           ),
         ),
@@ -61,6 +103,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
             width: MediaQuery.of(context).size.width * .172,
             height: MediaQuery.of(context).size.height * .075,
+
+            child: ElevatedButton(
+
+              style: ElevatedButton.styleFrom(
+                primary: _buttonStates[1] ? Colors.green : Colors.blue,
+              ),
+
+              onPressed: (){
+                _triggerButton(1);
+                print("button 2");
+
+              },
+              child: FlutterLogo(),
+            ),
+
             // Change the color as needed.
           ),
         ),
@@ -79,6 +136,17 @@ class _MyHomePageState extends State<MyHomePage> {
             width: MediaQuery.of(context).size.width * .172,
             height: MediaQuery.of(context).size.height * .075,
             // Change the color as needed.
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: _buttonStates[2] ? Colors.green : Colors.blue,
+              ),
+              onPressed: (){
+                _triggerButton(2);
+                print("button 3");
+
+              },
+              child: FlutterLogo(),
+            ),
           ),
         ),
 
@@ -137,6 +205,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
         // Add more Positioned containers as needed.
       ],
-    ));
+    ),
+      
+      floatingActionButton: TextButton(
+
+        onPressed: _triggerButtonsSequentially,
+        child: Icon(Icons.access_alarm_outlined,),
+      ),
+    );
   }
 }
