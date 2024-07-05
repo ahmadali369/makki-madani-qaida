@@ -32,6 +32,28 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
+  void _triggerButtonManullay(int index) async{
+
+
+    _triggerButton(index);
+    await audioPlayer.play(AssetSource(_audios[index]));
+
+    /// duartion
+    Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
+    Duration? nullableDuration = await nullableFutureDuration;
+    if (nullableDuration == null) {
+      throw Exception('Nullable duration is null');
+    }
+    await Future.delayed(nullableDuration);
+
+    _triggerButton(index);
+
+
+  }
+
+
+
   Future<void> _triggerButtonsSequentially() async {
     for (int i = 0; i < _buttonStates.length; i++) {
       _triggerButton(i);
@@ -42,20 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
       await audioPlayer.play(AssetSource(_audios[i]));
 
       /// duartion
-      // Simulating a function that returns a Future<Duration?>
       Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
-
-      // Wait for the future to complete and get the nullable duration
       Duration? nullableDuration = await nullableFutureDuration;
-
-      // Handle the case where nullableDuration is null
       if (nullableDuration == null) {
-        // Throw an error or handle the null case based on your app's logic
         throw Exception('Nullable duration is null');
       }
-
       await Future.delayed(nullableDuration);
-
       ///
     }
     // Reset the last button after the loop ends
@@ -101,7 +115,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   primary: _buttonStates[0] ? Colors.green : Colors.blue,
                 ),
                 onPressed: () async {
-                  _triggerButton(0);
+                  // _triggerButton(0);
+                  _triggerButtonManullay(0);
+
                   // await audioPlayer.play(AssetSource("audios/demo2.mp3"));
                   print("button 1");
                 },
@@ -130,7 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   primary: _buttonStates[1] ? Colors.green : Colors.blue,
                 ),
                 onPressed: () async {
-                  _triggerButton(1);
+                  // _triggerButton(1);
+                  _triggerButtonManullay(1);
                   // await audioPlayer.play(AssetSource("audios/demo.mp3"));
 
                   print("button 2");
@@ -161,7 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   primary: _buttonStates[2] ? Colors.green : Colors.blue,
                 ),
                 onPressed: () async {
-                  _triggerButton(2);
+                  // _triggerButton(2);
+                  _triggerButtonManullay(2);
+
                   // await audioPlayer.play(AssetSource("audios/demo2.mp3"));
 
                   print("button 3");
