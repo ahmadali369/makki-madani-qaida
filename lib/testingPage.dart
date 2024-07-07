@@ -33,6 +33,17 @@ class _MyHomePageState extends State<MyHomePage> {
     "audios/demo.mp3",
     "audios/demo2.mp3",
     "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+
+
   ];
 
   final audioPlayer = AudioPlayer();
@@ -151,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
             heigt: .075,
           ),
 
-          /// saa
+          /// jeem
 
           AudioButtonWidget(
             buttonState: _buttonStates[4],
@@ -171,6 +182,253 @@ class _MyHomePageState extends State<MyHomePage> {
             audio: _audios[1],
             top: 0.515,
             left: 0.790,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// khaa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[6],
+            audio: _audios[0],
+            top: 0.515,
+            left: 0.602,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// daal
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[7],
+            audio: _audios[1],
+            top: 0.515,
+            left: 0.414,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// zaal
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[8],
+            audio: _audios[0],
+            top: 0.515,
+            left: 0.226,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// raa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[9],
+            audio: _audios[1],
+            top: 0.515,
+            left: 0.038,
+            width: .172,
+            heigt: .075,
+          ),
+
+
+          /// ------------------------------------------------------------------------------------------ row 3
+          ///
+          /// zaa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[10],
+            audio: _audios[0],
+            top: 0.603,
+            left: 0.790,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// seen
+          AudioButtonWidget(
+            buttonState: _buttonStates[11],
+            audio: _audios[1],
+            top: 0.603,
+            left: 0.602,
+
+            width: .172,
+            heigt: .075,
+          ),
+          /// sheen
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[12],
+            audio: _audios[0],
+            top: 0.603,
+            left: 0.414,
+
+            width: .172,
+            heigt: .075,
+          ),
+          /// suad
+          AudioButtonWidget(
+            buttonState: _buttonStates[13],
+            audio: _audios[1],
+            top: 0.603,
+            left: 0.226,
+            width: .172,
+            heigt: .075,
+          ),
+          /// duad
+          AudioButtonWidget(
+            buttonState: _buttonStates[14],
+            audio: _audios[0],
+            top: 0.603,
+            left: 0.038,
+
+            width: .172,
+            heigt: .075,
+          ),
+          ///
+          ///
+          /// ------------------------------------------------------------------------------------------ row 4
+          ///
+          /// ttaa
+          AudioButtonWidget(
+            buttonState: _buttonStates[15],
+            audio: _audios[1],
+            top: 0.691,
+            left: 0.790,
+            width: .172,
+            heigt: .075,
+          ),
+          /// zuaa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[16],
+            audio: _audios[0],
+            top: 0.691,
+            left: 0.602,
+
+            width: .172,
+            heigt: .075,
+          ),
+
+
+          /// aain
+          AudioButtonWidget(
+            buttonState: _buttonStates[17],
+            audio: _audios[1],
+            top: 0.691,
+            left: 0.414,
+            width: .172,
+            heigt: .075,
+          ),
+          /// gaain
+          AudioButtonWidget(
+            buttonState: _buttonStates[18],
+            audio: _audios[0],
+            top: 0.691,
+            left: 0.226,
+            width: .172,
+            heigt: .075,
+          ),
+          /// faa
+          AudioButtonWidget(
+            buttonState: _buttonStates[19],
+            audio: _audios[1],
+            top: 0.691,
+            left: 0.038,
+            width: .172,
+            heigt: .075,
+          ),
+          ///
+          ///
+          /// ------------------------------------------------------------------------------------------ row 5
+          ///
+          /// Qaaf
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[20],
+            audio: _audios[0],
+            top: 0.779,
+            left: 0.790,
+            width: .172,
+            heigt: .075,
+          ),
+          /// kaaf
+          AudioButtonWidget(
+            buttonState: _buttonStates[21],
+            audio: _audios[1],
+            top: 0.779,
+            left: 0.602,
+            width: .172,
+            heigt: .075,
+          ),
+          /// laam
+          AudioButtonWidget(
+            buttonState: _buttonStates[22],
+            audio: _audios[1],
+            top: 0.779,
+            left: 0.414,
+            width: .172,
+            heigt: .075,
+          ),
+          /// meem
+          AudioButtonWidget(
+            buttonState: _buttonStates[23],
+            audio: _audios[1],
+            top: 0.779,
+            left: 0.226,
+            width: .172,
+            heigt: .075,
+          ),
+          /// noon
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[24],
+            audio: _audios[1],
+            top: 0.779,
+            left: 0.038,
+            width: .172,
+            heigt: .075,
+          ),
+          ///
+          /// ------------------------------------------------------------------------------------------ row 6
+
+          /// waw
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[25],
+            audio: _audios[0],
+            top: 0.867,
+            left: 0.699,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// haa
+          AudioButtonWidget(
+            buttonState: _buttonStates[26],
+            audio: _audios[1],
+            top: 0.867,
+            left: 0.509,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// hamza
+          AudioButtonWidget(
+            buttonState: _buttonStates[27],
+            audio: _audios[0],
+            top: 0.867,
+            left: 0.320,
+            width: .172,
+            heigt: .075,
+          ),
+
+          /// yaa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[28],
+            audio: _audios[1],
+            top: 0.867,
+            left: 0.130,
             width: .172,
             heigt: .075,
           ),
