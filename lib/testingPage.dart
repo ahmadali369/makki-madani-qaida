@@ -15,7 +15,24 @@ class _MyHomePageState extends State<MyHomePage> {
   late List<String> _audios = [
     "audios/demo2.mp3",
     "audios/demo.mp3",
-    "audios/demo2.mp3"
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
+    "audios/demo2.mp3",
+    "audios/demo.mp3",
   ];
 
   final audioPlayer = AudioPlayer();
@@ -23,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _buttonStates = List<bool>.filled(3, false);
+    _buttonStates = List<bool>.filled(29, false);
   }
 
   void _triggerButton(int index) {
@@ -92,172 +109,70 @@ class _MyHomePageState extends State<MyHomePage> {
           /// -------------------------------------------------------------------------------------- row 1   188
 
           /// alif
-          // Positioned(
-          //   left: MediaQuery.of(context).size.width *
-          //       0.790, // Adjust the left position as needed.
-          //   top: MediaQuery.of(context).size.height *
-          //       0.427, // Adjust the top position as needed.
-          //
-          //   child: Container(
-          //
-          //     decoration: BoxDecoration(
-          //         color: Colors.transparent, borderRadius: BorderRadius.circular(5),
-          //
-          //     ),
-          //
-          //     width: MediaQuery.of(context).size.width * .172,
-          //     height: MediaQuery.of(context).size.height * .075,
-          //     clipBehavior: Clip.antiAlias,
-          //
-          //
-          //     child: ElevatedButton(
-          //       style: ElevatedButton.styleFrom(
-          //         shadowColor: Colors.transparent,
-          //         primary: _buttonStates[0] ? Color(0xbbB3E6E1) : Colors.transparent,
-          //         shape: RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(0.0), // Optional: Set border radius
-          //           // Optional: You can also set other properties like border color, etc.
-          //         ),
-          //       ),
-          //
-          //       onPressed: () async {
-          //
-          //         _triggerButtonManullay(0);
-          //
-          //         // await audioPlayer.play(AssetSource("audios/demo2.mp3"));
-          //         print("button 1");
-          //       },
-          //       child: SizedBox(),
-          //     ),
-          //     // Change the color as needed.
-          //   ),
-          // ),
 
-
-          ///
-          AudioButtonWidget(buttonState: _buttonStates[0],audio: _audios[0], top: 0.427,left: 0.790,width: .172,heigt: .075,),
+          AudioButtonWidget(
+            buttonState: _buttonStates[0],
+            audio: _audios[0],
+            top: 0.427,
+            left: 0.790,
+            width: .172,
+            heigt: .075,
+          ),
 
           /// baa
-          AudioButtonWidget(buttonState: _buttonStates[1],audio: _audios[1], top: 0.427,left: 0.602,width: .172,heigt: .075,),
-
-          // Positioned(
-          //   left: MediaQuery.of(context).size.width *
-          //       0.602, // Adjust the left position as needed.
-          //   top: MediaQuery.of(context).size.height *
-          //       0.427, // Adjust the top position as needed.
-          //
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //         color: Colors.red, borderRadius: BorderRadius.circular(5)),
-          //
-          //     width: MediaQuery.of(context).size.width * .172,
-          //     height: MediaQuery.of(context).size.height * .075,
-          //
-          //     child: ElevatedButton(
-          //       style: ElevatedButton.styleFrom(
-          //         primary: _buttonStates[1] ? Colors.green : Colors.blue,
-          //       ),
-          //       onPressed: () async {
-          //         // _triggerButton(1);
-          //         _triggerButtonManullay(1);
-          //         // await audioPlayer.play(AssetSource("audios/demo.mp3"));
-          //
-          //         print("button 2");
-          //       },
-          //       child: FlutterLogo(),
-          //     ),
-          //
-          //     // Change the color as needed.
-          //   ),
-          // ),
+          AudioButtonWidget(
+            buttonState: _buttonStates[1],
+            audio: _audios[1],
+            top: 0.427,
+            left: 0.602,
+            width: .172,
+            heigt: .075,
+          ),
 
           /// taa
 
-          AudioButtonWidget(buttonState: _buttonStates[2],audio: _audios[0], top: 0.427,left: 0.414,width: .172,heigt: .075,),
-
-
-
-          // Positioned(
-          //   left: MediaQuery.of(context).size.width *
-          //       0.414, // Adjust the left position as needed.
-          //   top: MediaQuery.of(context).size.height *
-          //       0.427, // Adjust the top position as needed.
-          //
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //         color: Colors.red, borderRadius: BorderRadius.circular(5)),
-          //
-          //     width: MediaQuery.of(context).size.width * .172,
-          //     height: MediaQuery.of(context).size.height * .075,
-          //     // Change the color as needed.
-          //     child: ElevatedButton(
-          //       style: ElevatedButton.styleFrom(
-          //         primary: _buttonStates[2] ? Colors.green : Colors.blue,
-          //       ),
-          //       onPressed: () async {
-          //         // _triggerButton(2);
-          //         _triggerButtonManullay(2);
-          //
-          //         // await audioPlayer.play(AssetSource("audios/demo2.mp3"));
-          //
-          //         print("button 3");
-          //       },
-          //       child: FlutterLogo(),
-          //     ),
-          //   ),
-          // ),
-
-          /// saa
-          Positioned(
-            left: MediaQuery.of(context).size.width *
-                0.226, // Adjust the left position as needed.
-            top: MediaQuery.of(context).size.height *
-                0.427, // Adjust the top position as needed.
-
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
-
-              width: MediaQuery.of(context).size.width * .172,
-              height: MediaQuery.of(context).size.height * .075,
-              // Change the color as needed.
-            ),
+          AudioButtonWidget(
+            buttonState: _buttonStates[2],
+            audio: _audios[0],
+            top: 0.427,
+            left: 0.414,
+            width: .172,
+            heigt: .075,
           ),
 
           /// saa
-          Positioned(
-            left: MediaQuery.of(context).size.width *
-                0.038, // Adjust the left position as needed.
-            top: MediaQuery.of(context).size.height *
-                0.427, // Adjust the top position as needed.
 
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
+          AudioButtonWidget(
+            buttonState: _buttonStates[3],
+            audio: _audios[1],
+            top: 0.427,
+            left: 0.226,
+            width: .172,
+            heigt: .075,
+          ),
 
-              width: MediaQuery.of(context).size.width * .172,
-              height: MediaQuery.of(context).size.height * .075,
-              // Change the color as needed.
-            ),
+          /// saa
+
+          AudioButtonWidget(
+            buttonState: _buttonStates[4],
+            audio: _audios[0],
+            top: 0.427,
+            left: 0.038,
+            width: .172,
+            heigt: .075,
           ),
 
           /// ------------------------------------------------------------------------------------------ row 2
 
           /// haa
-          Positioned(
-            left: MediaQuery.of(context).size.width *
-                0.790, // Adjust the left position as needed.
-            top: MediaQuery.of(context).size.height *
-                0.515, // Adjust the top position as needed.
 
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
-
-              width: MediaQuery.of(context).size.width * .172,
-              height: MediaQuery.of(context).size.height * .075,
-              // Change the color as needed.
-            ),
+          AudioButtonWidget(
+            buttonState: _buttonStates[5],
+            audio: _audios[1],
+            top: 0.515,
+            left: 0.790,
+            width: .172,
+            heigt: .075,
           ),
 
           // Add more Positioned containers as needed.
@@ -274,19 +189,22 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class AudioButtonWidget extends StatefulWidget {
-  AudioButtonWidget({super.key, required this.buttonState, required this.audio, required this.left, required this.top, required this.width, required this.heigt});
-
-
+  AudioButtonWidget(
+      {super.key,
+      required this.buttonState,
+      required this.audio,
+      required this.left,
+      required this.top,
+      required this.width,
+      required this.heigt});
 
   double left;
   double top;
   double width;
   double heigt;
 
-
   bool buttonState;
   String audio;
-
 
   @override
   State<AudioButtonWidget> createState() => _AudioButtonWidgetState();
@@ -296,14 +214,12 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
   final audioPlayer = AudioPlayer();
   bool buttonLocalState = false;
 
-
   void _triggerButton(bool state) {
     setState(() {
-          state = !state;
-          buttonLocalState = !buttonLocalState;
+      state = !state;
+      buttonLocalState = !buttonLocalState;
     });
   }
-
 
   void _triggerButtonManullay(bool state, String audio) async {
     _triggerButton(state);
@@ -320,7 +236,6 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
     _triggerButton(state);
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -330,30 +245,28 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
           widget.top, // Adjust the top position as needed.
 
       child: Container(
-
         decoration: BoxDecoration(
-          color: Colors.transparent, borderRadius: BorderRadius.circular(5),
-
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(5),
         ),
 
         width: MediaQuery.of(context).size.width * widget.width,
         height: MediaQuery.of(context).size.height * widget.heigt,
         clipBehavior: Clip.antiAlias,
 
-
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shadowColor: Colors.transparent,
-            primary: (widget.buttonState || buttonLocalState) ? Color(0xbbB3E6E1) : Colors.transparent,
+            primary: (widget.buttonState || buttonLocalState)
+                ? Color(0xbbB3E6E1)
+                : Colors.transparent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0.0), // Optional: Set border radius
+              borderRadius:
+                  BorderRadius.circular(0.0), // Optional: Set border radius
             ),
           ),
-
           onPressed: () async {
             _triggerButtonManullay(widget.buttonState, widget.audio);
-
-            print("button 1");
           },
           child: SizedBox(),
         ),
@@ -362,5 +275,3 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
     );
   }
 }
-
-
