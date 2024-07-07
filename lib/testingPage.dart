@@ -261,6 +261,84 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+//
+// class AudioButtonWidget extends StatefulWidget {
+//   AudioButtonWidget({super.key, required this.buttonState, required this.buttonIndex, required this.audios});
+//   bool buttonState;
+//   int buttonIndex;
+//   List<String> audios;
+//
+//   @override
+//   State<AudioButtonWidget> createState() => _AudioButtonWidgetState();
+// }
+//
+// class _AudioButtonWidgetState extends State<AudioButtonWidget> {
+//   final audioPlayer = AudioPlayer();
+//
+//
+//   void _triggerButton(int index) {
+//     setState(() {
+//       _buttonStates[index] = !_buttonStates[index];
+//     });
+//   }
+//
+//
+//   void _triggerButtonManullay(int index) async {
+//     _triggerButton(index);
+//     await audioPlayer.play(AssetSource(_audios[index]));
+//
+//     /// duartion
+//     Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
+//     Duration? nullableDuration = await nullableFutureDuration;
+//     if (nullableDuration == null) {
+//       throw Exception('Nullable duration is null');
+//     }
+//     await Future.delayed(nullableDuration);
+//
+//     _triggerButton(index);
+//   }
+//
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Positioned(
+//       left: MediaQuery.of(context).size.width *
+//           0.790, // Adjust the left position as needed.
+//       top: MediaQuery.of(context).size.height *
+//           0.427, // Adjust the top position as needed.
+//
+//       child: Container(
+//
+//         decoration: BoxDecoration(
+//           color: Colors.transparent, borderRadius: BorderRadius.circular(5),
+//
+//         ),
+//
+//         width: MediaQuery.of(context).size.width * .172,
+//         height: MediaQuery.of(context).size.height * .075,
+//         clipBehavior: Clip.antiAlias,
+//
+//
+//         child: ElevatedButton(
+//           style: ElevatedButton.styleFrom(
+//             shadowColor: Colors.transparent,
+//             primary: widget.buttonState ? Color(0xbbB3E6E1) : Colors.transparent,
+//             shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(0.0), // Optional: Set border radius
+//             ),
+//           ),
+//
+//           onPressed: () async {
+//             _triggerButtonManullay(0);
+//
+//             print("button 1");
+//           },
+//           child: SizedBox(),
+//         ),
+//         // Change the color as needed.
+//       ),
+//     );
+//   }
+// }
 
 
