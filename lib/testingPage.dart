@@ -66,30 +66,47 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     for (int i = 0; i < _buttonStates.length; i++) {
-      _triggerButton(i);
-      if (i > 0) {
-        _triggerButton(i - 1); // Reset the previous button
+
+      if(BoolState.playPause ==  true){
+
+        _triggerButton(i);
+        if (i > 0) {
+          _triggerButton(i - 1); // Reset the previous button
+        }
+
+        await audioPlayer.play(AssetSource(_audios[i]));
+
+        /// duartion
+        Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
+        Duration? nullableDuration = await nullableFutureDuration;
+        if (nullableDuration == null) {
+          throw Exception('Nullable duration is null');
+        }
+
+        await Future.delayed(nullableDuration);
+
+        if(i == _buttonStates.length - 1){
+          // Reset the last button after the loop ends
+          _triggerButton(_buttonStates.length - 1);
+          setState(() {
+            BoolState.togglePlayPause();
+          });
+        }
+
+      }else{
+        if (i > 0) {
+          _triggerButton(i - 1); // Reset the previous button
+        }
+        break;
       }
-
-      await audioPlayer.play(AssetSource(_audios[i]));
-
-      /// duartion
-      Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
-      Duration? nullableDuration = await nullableFutureDuration;
-      if (nullableDuration == null) {
-        throw Exception('Nullable duration is null');
-      }
-      await Future.delayed(nullableDuration);
-
-      ///
     }
-    // Reset the last button after the loop ends
-    _triggerButton(_buttonStates.length - 1);
 
     setState(() {
       BoolState.toggleOneStreamRunning();
     });
-    print(BoolState.oneStreamRunning);
+
+
+
   }
 
   @override
@@ -441,14 +458,16 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           if (BoolState.oneButtonRunning == false &&
               BoolState.oneStreamRunning == false) {
-            _triggerButtonsSequentially();
-
             setState(() {
               BoolState.togglePlayPause();
             });
+            _triggerButtonsSequentially();
+
+
           } else {
             setState(() {
               BoolState.togglePlayPause();
+
             });
           }
         },
