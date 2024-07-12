@@ -44,8 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
     "audios/demo2.mp3",
     "audios/demo.mp3",
     "audios/demo2.mp3",
-
-
   ];
 
   final audioPlayer = AudioPlayer();
@@ -62,28 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _triggerButtonManullay(int index) async {
-    _triggerButton(index);
-    await audioPlayer.play(AssetSource(_audios[index]));
-
-    /// duartion
-    Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
-    Duration? nullableDuration = await nullableFutureDuration;
-    if (nullableDuration == null) {
-      throw Exception('Nullable duration is null');
-    }
-    await Future.delayed(nullableDuration);
-
-    _triggerButton(index);
-  }
-
   Future<void> _triggerButtonsSequentially() async {
-
     setState(() {
       BoolState.toggleOneStreamRunning();
     });
-
-    print(BoolState.oneStreamRunning);
 
     for (int i = 0; i < _buttonStates.length; i++) {
       _triggerButton(i);
@@ -105,6 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     // Reset the last button after the loop ends
     _triggerButton(_buttonStates.length - 1);
+
     setState(() {
       BoolState.toggleOneStreamRunning();
     });
@@ -243,7 +224,6 @@ class _MyHomePageState extends State<MyHomePage> {
             heigt: .075,
           ),
 
-
           /// ------------------------------------------------------------------------------------------ row 3
           ///
           /// zaa
@@ -263,10 +243,10 @@ class _MyHomePageState extends State<MyHomePage> {
             audio: _audios[1],
             top: 0.603,
             left: 0.602,
-
             width: .172,
             heigt: .075,
           ),
+
           /// sheen
 
           AudioButtonWidget(
@@ -274,10 +254,10 @@ class _MyHomePageState extends State<MyHomePage> {
             audio: _audios[0],
             top: 0.603,
             left: 0.414,
-
             width: .172,
             heigt: .075,
           ),
+
           /// suad
           AudioButtonWidget(
             buttonState: _buttonStates[13],
@@ -287,16 +267,17 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// duad
           AudioButtonWidget(
             buttonState: _buttonStates[14],
             audio: _audios[0],
             top: 0.603,
             left: 0.038,
-
             width: .172,
             heigt: .075,
           ),
+
           ///
           ///
           /// ------------------------------------------------------------------------------------------ row 4
@@ -310,6 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// zuaa
 
           AudioButtonWidget(
@@ -317,11 +299,9 @@ class _MyHomePageState extends State<MyHomePage> {
             audio: _audios[0],
             top: 0.691,
             left: 0.602,
-
             width: .172,
             heigt: .075,
           ),
-
 
           /// aain
           AudioButtonWidget(
@@ -332,6 +312,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// gaain
           AudioButtonWidget(
             buttonState: _buttonStates[18],
@@ -341,6 +322,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// faa
           AudioButtonWidget(
             buttonState: _buttonStates[19],
@@ -350,6 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           ///
           ///
           /// ------------------------------------------------------------------------------------------ row 5
@@ -364,6 +347,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// kaaf
           AudioButtonWidget(
             buttonState: _buttonStates[21],
@@ -373,6 +357,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// laam
           AudioButtonWidget(
             buttonState: _buttonStates[22],
@@ -382,6 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// meem
           AudioButtonWidget(
             buttonState: _buttonStates[23],
@@ -391,6 +377,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           /// noon
 
           AudioButtonWidget(
@@ -401,6 +388,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: .172,
             heigt: .075,
           ),
+
           ///
           /// ------------------------------------------------------------------------------------------ row 6
 
@@ -449,14 +437,23 @@ class _MyHomePageState extends State<MyHomePage> {
           // Add more Positioned containers as needed.
         ],
       ),
-      floatingActionButton: TextButton(
-        onPressed: (){
-          if(BoolState.oneButtonRunning == false && BoolState.oneStreamRunning == false){
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (BoolState.oneButtonRunning == false &&
+              BoolState.oneStreamRunning == false) {
             _triggerButtonsSequentially();
+
+            setState(() {
+              BoolState.togglePlayPause();
+            });
+          } else {
+            setState(() {
+              BoolState.togglePlayPause();
+            });
           }
         },
         child: Icon(
-          Icons.play_arrow,
+          BoolState.playPause ? Icons.pause : Icons.play_arrow,
         ),
       ),
     );
@@ -497,7 +494,6 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
   }
 
   void _triggerButtonManullay(bool state, String audio) async {
-
     setState(() {
       BoolState.toggleOneButtonRunning();
     });
@@ -550,8 +546,8 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
             ),
           ),
           onPressed: () async {
-
-            if(BoolState.oneButtonRunning == false && BoolState.oneStreamRunning == false){
+            if (BoolState.oneButtonRunning == false &&
+                BoolState.oneStreamRunning == false) {
               _triggerButtonManullay(widget.buttonState, widget.audio);
             }
           },
