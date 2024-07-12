@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import 'boolGlobleState.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -76,6 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> _triggerButtonsSequentially() async {
+
+    setState(() {
+      BoolState.toggleOneStreamRunning();
+    });
+
+    print(BoolState.oneStreamRunning);
+
     for (int i = 0; i < _buttonStates.length; i++) {
       _triggerButton(i);
       if (i > 0) {
@@ -96,6 +105,10 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     // Reset the last button after the loop ends
     _triggerButton(_buttonStates.length - 1);
+    setState(() {
+      BoolState.toggleOneStreamRunning();
+    });
+    print(BoolState.oneStreamRunning);
   }
 
   @override
@@ -437,7 +450,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButton: TextButton(
-        onPressed: _triggerButtonsSequentially,
+        onPressed: (){
+          if(BoolState.oneButtonRunning == false && BoolState.oneStreamRunning == false){
+            _triggerButtonsSequentially();
+          }
+        },
         child: Icon(
           Icons.play_arrow,
         ),
@@ -480,6 +497,11 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
   }
 
   void _triggerButtonManullay(bool state, String audio) async {
+
+    setState(() {
+      BoolState.toggleOneButtonRunning();
+    });
+
     _triggerButton(state);
     await audioPlayer.play(AssetSource(audio));
 
@@ -492,6 +514,10 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
     await Future.delayed(nullableDuration);
 
     _triggerButton(state);
+
+    setState(() {
+      BoolState.toggleOneButtonRunning();
+    });
   }
 
   @override
@@ -524,7 +550,10 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
             ),
           ),
           onPressed: () async {
-            _triggerButtonManullay(widget.buttonState, widget.audio);
+
+            if(BoolState.oneButtonRunning == false && BoolState.oneStreamRunning == false){
+              _triggerButtonManullay(widget.buttonState, widget.audio);
+            }
           },
           child: SizedBox(),
         ),
