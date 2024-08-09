@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import 'boolGlobleState.dart';
+import '../AudioButton.dart';
+import '../boolGlobleState.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -156,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[2],
-            audio: _audios[0],
+            audio: _audios[2],
             top: 0.427,
             left: 0.414,
             width: .172,
@@ -167,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[3],
-            audio: _audios[1],
+            audio: _audios[3],
             top: 0.427,
             left: 0.226,
             width: .172,
@@ -178,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[4],
-            audio: _audios[0],
+            audio: _audios[4],
             top: 0.427,
             left: 0.038,
             width: .172,
@@ -191,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[5],
-            audio: _audios[1],
+            audio: _audios[5],
             top: 0.515,
             left: 0.790,
             width: .172,
@@ -202,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[6],
-            audio: _audios[0],
+            audio: _audios[6],
             top: 0.515,
             left: 0.602,
             width: .172,
@@ -213,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[7],
-            audio: _audios[1],
+            audio: _audios[7],
             top: 0.515,
             left: 0.414,
             width: .172,
@@ -224,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[8],
-            audio: _audios[0],
+            audio: _audios[8],
             top: 0.515,
             left: 0.226,
             width: .172,
@@ -235,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[9],
-            audio: _audios[1],
+            audio: _audios[9],
             top: 0.515,
             left: 0.038,
             width: .172,
@@ -248,7 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[10],
-            audio: _audios[0],
+            audio: _audios[10],
             top: 0.603,
             left: 0.790,
             width: .172,
@@ -258,7 +259,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// seen
           AudioButtonWidget(
             buttonState: _buttonStates[11],
-            audio: _audios[1],
+            audio: _audios[11],
             top: 0.603,
             left: 0.602,
             width: .172,
@@ -269,7 +270,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[12],
-            audio: _audios[0],
+            audio: _audios[12],
             top: 0.603,
             left: 0.414,
             width: .172,
@@ -279,7 +280,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// suad
           AudioButtonWidget(
             buttonState: _buttonStates[13],
-            audio: _audios[1],
+            audio: _audios[13],
             top: 0.603,
             left: 0.226,
             width: .172,
@@ -289,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// duad
           AudioButtonWidget(
             buttonState: _buttonStates[14],
-            audio: _audios[0],
+            audio: _audios[14],
             top: 0.603,
             left: 0.038,
             width: .172,
@@ -303,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// ttaa
           AudioButtonWidget(
             buttonState: _buttonStates[15],
-            audio: _audios[1],
+            audio: _audios[15],
             top: 0.691,
             left: 0.790,
             width: .172,
@@ -314,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[16],
-            audio: _audios[0],
+            audio: _audios[16],
             top: 0.691,
             left: 0.602,
             width: .172,
@@ -324,7 +325,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// aain
           AudioButtonWidget(
             buttonState: _buttonStates[17],
-            audio: _audios[1],
+            audio: _audios[17],
             top: 0.691,
             left: 0.414,
             width: .172,
@@ -334,7 +335,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// gaain
           AudioButtonWidget(
             buttonState: _buttonStates[18],
-            audio: _audios[0],
+            audio: _audios[18],
             top: 0.691,
             left: 0.226,
             width: .172,
@@ -344,7 +345,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// faa
           AudioButtonWidget(
             buttonState: _buttonStates[19],
-            audio: _audios[1],
+            audio: _audios[19],
             top: 0.691,
             left: 0.038,
             width: .172,
@@ -359,7 +360,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[20],
-            audio: _audios[0],
+            audio: _audios[20],
             top: 0.779,
             left: 0.790,
             width: .172,
@@ -369,7 +370,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// kaaf
           AudioButtonWidget(
             buttonState: _buttonStates[21],
-            audio: _audios[1],
+            audio: _audios[21],
             top: 0.779,
             left: 0.602,
             width: .172,
@@ -379,7 +380,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// laam
           AudioButtonWidget(
             buttonState: _buttonStates[22],
-            audio: _audios[1],
+            audio: _audios[22],
             top: 0.779,
             left: 0.414,
             width: .172,
@@ -389,7 +390,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// meem
           AudioButtonWidget(
             buttonState: _buttonStates[23],
-            audio: _audios[1],
+            audio: _audios[23],
             top: 0.779,
             left: 0.226,
             width: .172,
@@ -400,7 +401,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[24],
-            audio: _audios[1],
+            audio: _audios[24],
             top: 0.779,
             left: 0.038,
             width: .172,
@@ -414,7 +415,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[25],
-            audio: _audios[0],
+            audio: _audios[25],
             top: 0.867,
             left: 0.699,
             width: .172,
@@ -424,7 +425,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// haa
           AudioButtonWidget(
             buttonState: _buttonStates[26],
-            audio: _audios[1],
+            audio: _audios[26],
             top: 0.867,
             left: 0.509,
             width: .172,
@@ -434,7 +435,7 @@ class _MyHomePageState extends State<MyHomePage> {
           /// hamza
           AudioButtonWidget(
             buttonState: _buttonStates[27],
-            audio: _audios[0],
+            audio: _audios[27],
             top: 0.867,
             left: 0.320,
             width: .172,
@@ -445,7 +446,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           AudioButtonWidget(
             buttonState: _buttonStates[28],
-            audio: _audios[1],
+            audio: _audios[28],
             top: 0.867,
             left: 0.130,
             width: .172,
@@ -480,101 +481,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class AudioButtonWidget extends StatefulWidget {
-  AudioButtonWidget(
-      {super.key,
-      required this.buttonState,
-      required this.audio,
-      required this.left,
-      required this.top,
-      required this.width,
-      required this.heigt});
 
-  double left;
-  double top;
-  double width;
-  double heigt;
-
-  bool buttonState;
-  String audio;
-
-  @override
-  State<AudioButtonWidget> createState() => _AudioButtonWidgetState();
-}
-
-class _AudioButtonWidgetState extends State<AudioButtonWidget> {
-  final audioPlayer = AudioPlayer();
-  bool buttonLocalState = false;
-
-  void _triggerButton(bool state) {
-    setState(() {
-      state = !state;
-      buttonLocalState = !buttonLocalState;
-    });
-  }
-
-  void _triggerButtonManullay(bool state, String audio) async {
-    setState(() {
-      BoolState.toggleOneButtonRunning();
-    });
-
-    _triggerButton(state);
-    await audioPlayer.play(AssetSource(audio));
-
-    /// duartion
-    Future<Duration?> nullableFutureDuration = audioPlayer.getDuration();
-    Duration? nullableDuration = await nullableFutureDuration;
-    if (nullableDuration == null) {
-      throw Exception('Nullable duration is null');
-    }
-    await Future.delayed(nullableDuration);
-
-    _triggerButton(state);
-
-    setState(() {
-      BoolState.toggleOneButtonRunning();
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      left: MediaQuery.of(context).size.width *
-          widget.left, // Adjust the left position as needed.
-      top: MediaQuery.of(context).size.height *
-          widget.top, // Adjust the top position as needed.
-
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(5),
-        ),
-
-        width: MediaQuery.of(context).size.width * widget.width,
-        height: MediaQuery.of(context).size.height * widget.heigt,
-        clipBehavior: Clip.antiAlias,
-
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shadowColor: Colors.transparent,
-            primary: (widget.buttonState || buttonLocalState)
-                ? Color(0xbbB3E6E1)
-                : Colors.transparent,
-            shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(0.0), // Optional: Set border radius
-            ),
-          ),
-          onPressed: () async {
-            if (BoolState.oneButtonRunning == false &&
-                BoolState.oneStreamRunning == false) {
-              _triggerButtonManullay(widget.buttonState, widget.audio);
-            }
-          },
-          child: SizedBox(),
-        ),
-        // Change the color as needed.
-      ),
-    );
-  }
-}
