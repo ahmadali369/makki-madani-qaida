@@ -4,15 +4,15 @@ import 'package:audioplayers/audioplayers.dart';
 import '../AudioButton.dart';
 import '../boolGlobleState.dart';
 
-class P1_S1 extends StatefulWidget {
-  const P1_S1({super.key});
+class P3_S3 extends StatefulWidget {
+  const P3_S3({super.key});
 
 
   @override
-  State<P1_S1> createState() => _P1_S1State();
+  State<P3_S3> createState() => _P1_S1State();
 }
 
-class _P1_S1State extends State<P1_S1> {
+class _P1_S1State extends State<P3_S3> {
   late List<bool> _buttonStates;
   late List<String> _audios = [
     "audios/p1/Alif.mp3",
@@ -124,7 +124,7 @@ class _P1_S1State extends State<P1_S1> {
             width: double.infinity,
             height: double.infinity,
             child: Image.asset(
-              'assets/images/img (10).jpg',
+              'assets/images/img (12).jpg',
               fit: BoxFit.fill,
             ),
           ),
