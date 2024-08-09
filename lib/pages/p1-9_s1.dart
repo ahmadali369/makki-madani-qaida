@@ -55,6 +55,15 @@ class _P1_S1State extends State<P1_S1> {
     _buttonStates = List<bool>.filled(29, false);
   }
 
+
+  @override
+  void dispose() {
+    // Release all sources and dispose the player.
+    audioPlayer.dispose();
+
+    super.dispose();
+  }
+
   void _triggerButton(int index) {
     setState(() {
       _buttonStates[index] = !_buttonStates[index];
@@ -75,6 +84,7 @@ class _P1_S1State extends State<P1_S1> {
           _triggerButton(i - 1); // Reset the previous button
         }
 
+        await audioPlayer.release();
         await audioPlayer.play(AssetSource(_audios[i]));
 
         /// duartion
