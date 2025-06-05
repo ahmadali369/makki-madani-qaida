@@ -79,9 +79,14 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shadowColor: Colors.transparent,
-            primary: (widget.buttonState || buttonLocalState)
+
+
+            backgroundColor: (widget.buttonState || buttonLocalState)
                 ? Color(0xbbB3E6E1)
                 : Colors.transparent,
+
+
+
             shape: RoundedRectangleBorder(
               borderRadius:
               BorderRadius.circular(0.0), // Optional: Set border radius
