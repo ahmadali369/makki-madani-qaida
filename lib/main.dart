@@ -4,6 +4,8 @@ import 'package:makki_madani_qaida/pages/p1-9_s1.dart';
 import 'package:makki_madani_qaida/pages/p2-10_s2.dart';
 import 'package:makki_madani_qaida/pages/p3-11_s3.dart';
 
+import 'SplashScreen/SplashScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,13 +18,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
+      title: 'Makki Madani Qaida',
+      // theme: ThemeData(
+      //
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
+      // home: const HomePageButtonList(),
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePageButtonList(),
+      home: SplashScreen(),
+
 
 
     );
