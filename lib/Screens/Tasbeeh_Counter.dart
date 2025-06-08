@@ -53,27 +53,32 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
             ),
           ),
 
-          Padding(
-            padding: const EdgeInsets.fromLTRB(60, 40, 0, 0),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+          Center(
+            child: Container(
+              height: MediaQuery.of(context).size.height,
+              child: const SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    SizedBox(height: 80,),
+
+                    PageButton(name: "P1_s1", Page: P1_S1()),
+
+                    SizedBox(height: 10,),
+
+                    PageButton(name: "P2_s2", Page: P2_S2()),
+
+                    SizedBox(height: 10,),
+
+                    PageButton(name: "P3_s3", Page: P3_S3()),
 
 
-                  PageButton(name: "P1_s1", Page: const P1_S1()),
+                    ///   ---------------------------
 
-                  const SizedBox(height: 10,),
-
-                  PageButton(name: "P2_s2", Page: const P2_S2()),
-
-                  const SizedBox(height: 10,),
-
-                  PageButton(name: "P3_s3", Page: const P3_S3()),
-
-
-                ],
+                  ],
+                ),
               ),
             ),
           )
@@ -114,7 +119,7 @@ class _PageButtonState extends State<PageButton> {
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width * .6,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [
               Color(0xFF13342d), // Dark Green
               Color(0xFFFFD700), // Gold
@@ -130,7 +135,7 @@ class _PageButtonState extends State<PageButton> {
         ),
         child: Text(
           widget.name,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 18,
             fontWeight: FontWeight.bold,
