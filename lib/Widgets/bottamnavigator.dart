@@ -46,7 +46,7 @@ class CustomNavBarCurvedState extends State<CustomNavBarCurved> {
             padding: const EdgeInsets.only(bottom: 20),
             child: FloatingActionButton(
               shape: const CircleBorder(),
-              backgroundColor: Color(0xFFFFD700),
+              backgroundColor: const Color(0xFFFFD700),
               elevation: 5, // Increase for better shadow effect
               onPressed: () {},
               child: const Icon(CupertinoIcons.book, color: Colors.black),
@@ -68,7 +68,7 @@ class CustomNavBarCurvedState extends State<CustomNavBarCurved> {
                     selected: _selectedIndex == 0,
                     onPressed: () => _onNavBarItemTapped(0),
                     defaultColor: secondaryColor,
-                    selectedColor:  Color(0xFFFFD700), 
+                    selectedColor:  const Color(0xFFFFD700),
                   ),
                   NavBarIcon(
                     text: "Search",
@@ -76,7 +76,7 @@ class CustomNavBarCurvedState extends State<CustomNavBarCurved> {
                     selected: _selectedIndex == 1,
                     onPressed: () => _onNavBarItemTapped(1),
                     defaultColor: secondaryColor,
-                    selectedColor:  Color(0xFFFFD700), 
+                    selectedColor:  const Color(0xFFFFD700),
                   ),
                   const SizedBox(width: 50), // Space for FAB
                   NavBarIcon(
@@ -85,14 +85,14 @@ class CustomNavBarCurvedState extends State<CustomNavBarCurved> {
                     selected: _selectedIndex == 2,
                     onPressed: () => _onNavBarItemTapped(2),
                     defaultColor: secondaryColor,
-                    selectedColor:  Color(0xFFFFD700), 
+                    selectedColor:  const Color(0xFFFFD700),
                   ),
                   NavBarIcon(
                     text: "Profile",
                     icon: CupertinoIcons.person,
                     selected: _selectedIndex == 3,
                     onPressed: () => _onNavBarItemTapped(3),
-                    selectedColor:   Color(0xFFFFD700), 
+                    selectedColor:   const Color(0xFFFFD700),
                     defaultColor: secondaryColor,
                   )
                 ],
@@ -171,7 +171,7 @@ class NavBarIcon extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       icon: CircleAvatar(
-        backgroundColor: selected ?  Color(0xFFFFD700): Colors.transparent,
+        backgroundColor: selected ?  const Color(0xFFFFD700): Colors.transparent,
         child: Icon(
           icon,
           size: 25,

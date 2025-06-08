@@ -84,10 +84,10 @@ class _IslamicQuotesScreenState extends State<IslamicQuotesScreen> {
                     color: Colors.black.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         "Islamic Quote of the Day",
                         style: TextStyle(
                           fontSize: 22,
@@ -95,11 +95,11 @@ class _IslamicQuotesScreenState extends State<IslamicQuotesScreen> {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         quotes[currentQuoteIndex], // Display random quote
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 18,
                           fontStyle: FontStyle.italic,
                           color: Colors.white,
@@ -109,13 +109,13 @@ class _IslamicQuotesScreenState extends State<IslamicQuotesScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Refresh Button
               ElevatedButton(
   onPressed: changeQuote,
   style: ElevatedButton.styleFrom(
-    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20),
     ),
@@ -124,7 +124,7 @@ class _IslamicQuotesScreenState extends State<IslamicQuotesScreen> {
   ),
   child: Ink(
     decoration: BoxDecoration(
-      gradient: LinearGradient(
+      gradient: const LinearGradient(
         colors: [
           Color(0xFF13342d), // Dark Green (Left)
           Color(0xFFFFD700), // Gold (Middle-left)
@@ -140,8 +140,8 @@ class _IslamicQuotesScreenState extends State<IslamicQuotesScreen> {
     ),
   child: Container(
     alignment: Alignment.center,
-    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-    child: Text(
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    child: const Text(
       "New Quote",
       style: TextStyle(
         fontSize: 18,

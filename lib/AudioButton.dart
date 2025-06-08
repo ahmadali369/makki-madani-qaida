@@ -82,7 +82,7 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
 
 
             backgroundColor: (widget.buttonState || buttonLocalState)
-                ? Color(0xbbB3E6E1)
+                ? const Color(0xbbB3E6E1)
                 : Colors.transparent,
 
 
@@ -98,7 +98,7 @@ class _AudioButtonWidgetState extends State<AudioButtonWidget> {
               _triggerButtonManullay(widget.buttonState, widget.audio);
             }
           },
-          child: SizedBox(),
+          child: const SizedBox(),
         ),
         // Change the color as needed.
       ),

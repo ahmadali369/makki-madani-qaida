@@ -37,13 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
           Center(
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Title
-                    Center(
+                    const Center(
                       child: Text(
                         "Welcome Back!",
                         style: TextStyle(
@@ -53,56 +53,56 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     // Email Field
                     TextField(
-                      cursorColor: Color(0xFFFFD700),
-                      style: TextStyle(color: Colors.white),
+                      cursorColor: const Color(0xFFFFD700),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white.withOpacity(0.2),
                         hintText: "Email",
-                        hintStyle: TextStyle(color: Colors.white70),
-                        prefixIcon: Icon(Icons.email, color: Color(0xFFFFD700),),
+                        hintStyle: const TextStyle(color: Colors.white70),
+                        prefixIcon: const Icon(Icons.email, color: Color(0xFFFFD700),),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide.none,
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     // Password Field
                     TextField(
-                      cursorColor: Color(0xFFFFD700),
+                      cursorColor: const Color(0xFFFFD700),
                       obscureText: true,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white.withOpacity(0.2),
                         hintText: "Password",
-                        hintStyle: TextStyle(color: Colors.white70),
-                        prefixIcon: Icon(Icons.lock, color: Color(0xFFFFD700)),
+                        hintStyle: const TextStyle(color: Colors.white70),
+                        prefixIcon: const Icon(Icons.lock, color: Color(0xFFFFD700)),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide.none,
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
 
                     // Remember Me & Forgot Password Row
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Transform.translate(
-                          offset: Offset(-10, 0),
+                          offset: const Offset(-10, 0),
                           child: Row(
                             children: [
                               Checkbox(
                                 value: rememberMe,
-                                activeColor: Color(0xFFFFD700),
+                                activeColor: const Color(0xFFFFD700),
                                 checkColor: Colors.black,
                                 onChanged: (value) {
                                   setState(() {
@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   });
                                 },
                               ),
-                              Text(
+                              const Text(
                                 "Remember Me",
                                 style: TextStyle(color: Colors.white),
                               ),
@@ -121,20 +121,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             // Handle forgot password
                           },
-                          child: Text(
+                          child: const Text(
                             "Forgot Password?",
                             style: TextStyle(color: Color(0xFFFFD700),),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Gradient Login Button
                     GestureDetector(
                       onTap: () {
 
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => QuranApp()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const QuranApp()));
                         // Handle login
                       },
                       child: Container(
@@ -142,7 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: Alignment.center,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [
                               Color(0xFF13342d), // Dark Green
                               Color(0xFFFFD700), // Gold
@@ -156,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Text(
+                        child: const Text(
                           "Login",
                           style: TextStyle(
                             color: Colors.black,
@@ -166,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Don't have an account? Sign Up
                     Center(
@@ -176,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           // Navigate to Sign Up screen
                         },
                         child: RichText(
-                          text: TextSpan(
+                          text: const TextSpan(
                             text: "Don't have an account? ",
                             style: TextStyle(color: Colors.white),
                             children: [

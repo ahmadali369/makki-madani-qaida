@@ -45,7 +45,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
         children: [
           // Background Image
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/background2.png'),
                 fit: BoxFit.cover,

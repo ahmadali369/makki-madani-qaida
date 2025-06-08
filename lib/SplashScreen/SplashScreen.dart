@@ -17,11 +17,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Using Future.delayed instead of Timer for better readability
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       if (mounted) { // Check if the widget is still in the tree
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => OnBoarding()),
+          MaterialPageRoute(builder: (context) => const OnBoarding()),
         );
       }
     });

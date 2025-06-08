@@ -112,8 +112,7 @@ class _P1_S1State extends State<P3_S3> {
 
   @override
   Widget build(BuildContext context) {
-    final double Height = MediaQuery.of(context).size.height;
-    final double Width = MediaQuery.of(context).size.width;
+
 
     return Scaffold(
       body: Stack(

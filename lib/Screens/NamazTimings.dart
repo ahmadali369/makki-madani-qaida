@@ -35,7 +35,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
         children: [
           // Background Image
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/background2.png'),
                 fit: BoxFit.cover,
@@ -55,7 +55,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
           ),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -74,7 +74,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
 
                 // Next Prayer Section
                 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 // Prayer Times List
                 Expanded(
@@ -84,7 +84,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
                       String prayer = prayerTimes.keys.elementAt(index);
                       String time = prayerTimes.values.elementAt(index);
                       return Padding(
-                        padding: EdgeInsets.symmetric(vertical: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         child: Card(
                           elevation: 5,
                           color: Colors.white.withOpacity(0.9),
@@ -102,12 +102,12 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
                             ),
                             subtitle: Text(
                               time,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 18,
                                 color: Colors.black54,
                               ),
                             ),
-                            trailing: Icon(
+                            trailing: const Icon(
                               Icons.access_time,
                               color: Color(0xFFFFD700),
                             ),

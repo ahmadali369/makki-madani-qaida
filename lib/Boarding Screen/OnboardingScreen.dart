@@ -163,7 +163,7 @@ class _PrimaryButtonState extends State<PrimaryButton>
             alignment: Alignment.center,
             width: widget.width ?? double.maxFinite,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 colors: [
                   Color(0xFF13342d), // Dark Green (Left)
                   Color(0xFFFFD700), // Gold (Middle-left)
@@ -271,7 +271,7 @@ class CustomDotsIndicator extends StatelessWidget {
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
-        activeColor: Color(0xFFFFD700), // Gold
+        activeColor: const Color(0xFFFFD700), // Gold
       ),
     );
   }

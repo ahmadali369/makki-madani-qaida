@@ -47,7 +47,7 @@ class _HomePageButtonListState extends State<HomePageButtonList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Makki Madani Qaida'),backgroundColor: Colors.blue,),
+      appBar: AppBar(title: const Text('Makki Madani Qaida'),backgroundColor: Colors.blue,),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,8 +60,8 @@ class _HomePageButtonListState extends State<HomePageButtonList> {
                       context,
                       MaterialPageRoute(builder: (context) => const P1_S1()));
 
-            }, child: Text("P1_s1")),
-            SizedBox(height: 10,),
+            }, child: const Text("P1_s1")),
+            const SizedBox(height: 10,),
 
 
             TextButton(
@@ -71,8 +71,8 @@ class _HomePageButtonListState extends State<HomePageButtonList> {
                       context,
                       MaterialPageRoute(builder: (context) => const P2_S2()));
 
-                }, child: Text("P2_s2")),
-            SizedBox(height: 10,),
+                }, child: const Text("P2_s2")),
+            const SizedBox(height: 10,),
 
 
             TextButton(
@@ -82,8 +82,8 @@ class _HomePageButtonListState extends State<HomePageButtonList> {
                       context,
                       MaterialPageRoute(builder: (context) => const P3_S3()));
 
-                }, child: Text("P3_s3")),
-            SizedBox(height: 10,),
+                }, child: const Text("P3_s3")),
+            const SizedBox(height: 10,),
 
 
           ],

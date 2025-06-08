@@ -21,7 +21,7 @@ class QuranApp extends StatefulWidget {
 class _QuranAppState extends State<QuranApp> {
   final List<Map<String, dynamic>> containerData = [
     {"image": "assets/t.png", "label": "Tasbeeh Counter", "screen": TasbeehApp()},
-    {"image": "assets/q.png", "label": "Qibla Tracker ", "screen": QiblahScreen()},
+    {"image": "assets/q.png", "label": "Qibla Tracker ", "screen": const QiblahScreen()},
     {"image": "assets/qu.png", "label": "Quranic Quotes", "screen": IslamicQuotesApp()}, 
     {"image": "assets/MMM.png", "label": "Prayer Timings", "screen": PrayerTimingsScreen()},
   ];
@@ -101,7 +101,7 @@ class _QuranAppState extends State<QuranApp> {
         height: 100,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color:  Color(0xFFFFD700),
+          color:  const Color(0xFFFFD700),
           borderRadius: BorderRadius.circular(15),
           boxShadow: const [
             BoxShadow(
