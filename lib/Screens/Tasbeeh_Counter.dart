@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../pages/p1-9_s1.dart';
+import '../pages/p2-10_s2.dart';
+import '../pages/p3-11_s3.dart';
+
 void main() {
   runApp(TasbeehApp());
 }
@@ -48,120 +52,92 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
               ),
             ),
           ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Tasbeeh Shape
-                Container(
-                  width: 200,
-                  height: 250,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color.fromARGB(40, 22, 255, 5), Color(0xFFFFD700),],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                    borderRadius: BorderRadius.circular(50),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 10,
-                        spreadRadius: 2,
-                        offset: Offset(0, 4),
-                      )
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Display Screen
-                      Container(
-                        width: 120,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '$_count',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Counter Tasbeeh',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 30),
-                      // Button Area
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: _incrementCounter,
-                            child: Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                gradient: LinearGradient(
-                                  colors: [Colors.black, Colors.black],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    blurRadius: 10,
-                                    spreadRadius: 2,
-                                    offset: Offset(0, 4),
-                                  )
-                                ],
-                              ),
-                              child: Icon(Icons.touch_app, size: 40, color: Colors.white),
-                            ),
-                          ),
-                          SizedBox(width: 20),
-                          GestureDetector(
-                            onTap: _resetCounter,
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    blurRadius: 5,
-                                    spreadRadius: 1,
-                                    offset: Offset(0, 2),
-                                  )
-                                ],
-                              ),
-                              child: Icon(Icons.refresh, size: 25, color: Colors.black),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+
+          Padding(
+            padding: const EdgeInsets.fromLTRB(60, 40, 0, 0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+
+
+                  PageButton(name: "P1_s1", Page: const P1_S1()),
+
+                  const SizedBox(height: 10,),
+
+                  PageButton(name: "P2_s2", Page: const P2_S2()),
+
+                  const SizedBox(height: 10,),
+
+                  PageButton(name: "P3_s3", Page: const P3_S3()),
+
+
+                ],
+              ),
             ),
-          ),
+          )
+
+
         ],
       ),
     );
   }
 }
+
+
+
+
+class PageButton extends StatefulWidget {
+
+  const PageButton({super.key, required this.name, required this.Page});
+
+  final String name;
+  final Widget Page;
+
+
+  @override
+  State<PageButton> createState() => _PageButtonState();
+}
+
+class _PageButtonState extends State<PageButton> {
+  @override
+  Widget build(BuildContext context) {
+    return                     GestureDetector(
+      onTap: () {
+
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => widget.Page));
+        // Handle login
+      },
+      child: Container(
+        height: 50,
+        alignment: Alignment.center,
+        width: MediaQuery.of(context).size.width * .6,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF13342d), // Dark Green
+              Color(0xFFFFD700), // Gold
+              Color(0xFFFFE066), // Light Gold (Center)
+              Color(0xFFFFD700), // Gold
+              Color(0xFF13342d), // Dark Green
+            ],
+            stops: [0.0, 0.35, 0.5, 0.65, 1.0],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          widget.name,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
